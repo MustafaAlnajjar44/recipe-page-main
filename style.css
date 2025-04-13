@@ -13,7 +13,9 @@ body {
 
 .container {
   width: 100%;
-  height: 100%;
+  height: auto;
+  padding-block: 50px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,10 +23,15 @@ body {
 
 .card {
   background-color: #ffffff;
-  width: 700px;
-  margin-top: 50em;
+  max-width: 700px;
+  width: 100%;
   padding: 30px;
   border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 img {
@@ -43,14 +50,13 @@ h1 {
 p {
   font-size: 12px;
   color: grey;
-  margin-bottom: 20px;
 }
 
 .time {
   background-color: #fff7fc;
   padding: 20px;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-block: 20px;
 }
 
 .time h4 {
@@ -63,11 +69,20 @@ p {
   list-style: none;
 }
 
+.time li {
+  display: flex;
+  align-items: center;
+}
+
 .time li::before {
   color: #883151;
   content: "•";
   font-size: 20px;
   margin-right: 20px;
+}
+
+.time li p {
+  font-size: 16px;
 }
 
 h2 {
@@ -81,6 +96,11 @@ h2 {
   color: grey;
   list-style: none;
   margin-left: 5px;
+}
+
+.ingredients li {
+  display: flex;
+  align-items: center;
 }
 
 .ingredients li::before {
@@ -119,6 +139,7 @@ hr {
 table {
   width: 100%;
   color: grey;
+  margin-block: 20px;
 }
 
 .name {
@@ -128,9 +149,23 @@ table {
 .value {
   color: #914e30;
   font-weight: bold;
-  padding-left: 250px;
 }
 
 table hr {
   margin-block: 10px;
+}
+
+@media screen and (max-width: 760px) {
+  .container,
+  .card {
+    padding: 0px;
+  }
+
+  .mobile {
+    width: 70%;
+  }
+
+  img {
+    border-radius: 0;
+  }
 }
